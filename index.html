@@ -43,6 +43,15 @@
   .tab:hover { color: var(--body); }
   .tab.active { color: var(--client); border-bottom-color: var(--client); font-weight: 600; }
 
+  .tab-select {
+    font: inherit; font-size: 14px; font-weight: 500; color: var(--muted);
+    background: none; border: 0; border-bottom: 2px solid transparent;
+    padding: 9px 4px 11px; margin-bottom: -1px; cursor: pointer; transition: color .12s ease;
+  }
+  .tab-select:hover { color: var(--body); }
+  .tab-select.active { color: var(--client); border-bottom-color: var(--client); font-weight: 600; }
+  .tab-select:disabled { cursor: not-allowed; opacity: .5; }
+
   .panel { display: none; }
   .panel.active { display: block; }
 
@@ -150,10 +159,12 @@
 
   <div class="tabs">
     <button class="tab active" data-panel="general">General</button>
-    <button class="tab" data-panel="venues">Venues</button>
-    <button class="tab" data-panel="vignette">Vignette Gardens</button>
-    <button class="tab" data-panel="marketing-agency">Marketing Agency</button>
-    <button class="tab" data-panel="socially-entwined">Socially Entwined</button>
+    <select class="tab-select" id="segment-select" aria-label="Segment">
+      <option value="">Segment…</option>
+    </select>
+    <select class="tab-select" id="business-select" aria-label="Business" disabled>
+      <option value="">Business…</option>
+    </select>
   </div>
 
   <!-- ═════════════ GENERAL ═════════════ -->
@@ -268,7 +279,7 @@
   </div>
 
   <!-- ═════════════ VENUES ═════════════ -->
-  <div class="panel" id="venues">
+  <div class="panel" id="venues" data-level="segment" data-label="Venues">
 
     <section>
       <div class="sec-head client-scope">
@@ -415,7 +426,7 @@
   </div>
 
   <!-- ═════════════ VIGNETTE GARDENS ═════════════ -->
-  <div class="panel" id="vignette" data-owner="Jose">
+  <div class="panel" id="vignette" data-level="business" data-segment="venues" data-label="Vignette Gardens" data-owner="Jose">
 
     <div class="legend">
       <span><i class="l-focus"></i>Focus now — what we build first</span>
@@ -683,7 +694,7 @@
   </div>
 
   <!-- ═════════════ MARKETING AGENCY ═════════════ -->
-  <div class="panel" id="marketing-agency">
+  <div class="panel" id="marketing-agency" data-level="segment" data-label="Marketing Agency">
 
     <section>
       <div class="sec-head client-scope">
@@ -811,7 +822,7 @@
   </div>
 
   <!-- ═════════════ SOCIALLY ENTWINED ═════════════ -->
-  <div class="panel" id="socially-entwined" data-owner="Krystal">
+  <div class="panel" id="socially-entwined" data-level="business" data-segment="marketing-agency" data-label="Socially Entwined" data-owner="Krystal">
 
     <div class="legend">
       <span><i class="l-focus"></i>Focus now — what we build first</span>
@@ -1047,6 +1058,73 @@
     drawer.scrollTop = 0;
   }
 
+  // --- tab bar: fixed "General" tab + Segment/Business dropdowns ---
+  // Segment options and business-by-segment filtering are read straight off the
+  // panels' own data-level/data-segment/data-label attributes, so adding a new
+  // segment or business tab still needs no JS changes here — same promise as
+  // the old flat-button tab bar (see README § Adding a tab).
+  var segmentSel  = document.getElementById('segment-select');
+  var businessSel = document.getElementById('business-select');
+
+  var businesses = Array.prototype.slice.call(document.querySelectorAll('.panel[data-level="business"]'))
+    .map(function (p) { return { id: p.id, label: p.dataset.label, segment: p.dataset.segment }; });
+
+  document.querySelectorAll('.panel[data-level="segment"]').forEach(function (p) {
+    var opt = document.createElement('option');
+    opt.value = p.id;
+    opt.textContent = p.dataset.label;
+    segmentSel.appendChild(opt);
+  });
+
+  function activatePanel(id) {
+    document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    close();
+  }
+
+  function clearSelects() {
+    segmentSel.classList.remove('active');
+    businessSel.classList.remove('active');
+    segmentSel.value = '';
+    businessSel.innerHTML = '<option value="">Business…</option>';
+    businessSel.disabled = true;
+  }
+
+  function activateTab(tab) {
+    clearSelects();
+    document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    activatePanel(tab.dataset.panel);
+  }
+
+  function populateBusinessSelect(segmentId) {
+    businessSel.innerHTML = '<option value="">Business…</option>';
+    businesses.filter(function (b) { return b.segment === segmentId; }).forEach(function (b) {
+      var opt = document.createElement('option');
+      opt.value = b.id;
+      opt.textContent = b.label;
+      businessSel.appendChild(opt);
+    });
+    businessSel.disabled = false;
+    businessSel.classList.remove('active');
+  }
+
+  segmentSel.addEventListener('change', function () {
+    var segId = segmentSel.value;
+    if (!segId) { activateTab(document.querySelector('.tab[data-panel="general"]')); return; }
+    document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+    segmentSel.classList.add('active');
+    activatePanel(segId);
+    populateBusinessSelect(segId);
+  });
+
+  businessSel.addEventListener('change', function () {
+    var bizId = businessSel.value;
+    if (!bizId) { businessSel.classList.remove('active'); activatePanel(segmentSel.value); return; }
+    businessSel.classList.add('active');
+    activatePanel(bizId);
+  });
+
   document.addEventListener('click', function (e) {
     if (e.target.closest('#drawer .x')) { close(); return; }
     if (e.target.closest('#drawer')) return;
@@ -1055,14 +1133,7 @@
     if (box) { open(box); return; }
 
     var tab = e.target.closest('.tab');
-    if (tab) {
-      document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
-      document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.panel).classList.add('active');
-      close();
-      return;
-    }
+    if (tab) { activateTab(tab); return; }
 
     close();
   });
