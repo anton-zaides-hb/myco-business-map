@@ -152,6 +152,8 @@
     <button class="tab active" data-panel="general">General</button>
     <button class="tab" data-panel="venues">Venues</button>
     <button class="tab" data-panel="vignette">Vignette Gardens</button>
+    <button class="tab" data-panel="marketing-agency">Marketing Agency</button>
+    <button class="tab" data-panel="socially-entwined">Socially Entwined</button>
   </div>
 
   <!-- ═════════════ GENERAL ═════════════ -->
@@ -413,7 +415,7 @@
   </div>
 
   <!-- ═════════════ VIGNETTE GARDENS ═════════════ -->
-  <div class="panel" id="vignette">
+  <div class="panel" id="vignette" data-owner="Jose">
 
     <div class="legend">
       <span><i class="l-focus"></i>Focus now — what we build first</span>
@@ -680,6 +682,295 @@
     </section>
   </div>
 
+  <!-- ═════════════ MARKETING AGENCY ═════════════ -->
+  <div class="panel" id="marketing-agency">
+
+    <section>
+      <div class="sec-head client-scope">
+        <span class="pip"></span><h2>Client-based</h2>
+        <span class="note">One retainer per client, running every month for as long as it lasts</span><span class="line"></span>
+      </div>
+      <div class="row client" style="--n:7">
+
+        <div class="col">
+          <div class="head" data-note="How a marketing agency gets found by the businesses it wants to manage. Thin here is ironic — an agency that can't market its own presence has a hard time selling anyone else's.">Awareness</div>
+          <div class="sub" data-note="The single strongest sales asset an agency has. Before-and-after results sell better than any pitch.">Portfolio and case studies</div>
+          <div class="sub" data-note="A prospect checks the agency's own accounts first. A quiet feed undercuts the pitch before the call even happens.">Own social presence</div>
+          <div class="sub" data-note="Other clients, or a network the agency became a vendor to. Often the highest-quality lead source, and rarely tracked as its own channel.">Referrals</div>
+          <div class="sub" data-note="Cold outreach to a defined list of target businesses. Only works at volume, and volume is exactly where it usually breaks down.">Outbound prospecting</div>
+          <div class="sub" data-note="Public proof the agency actually delivers. Easy to neglect once the client roster is already full.">Reviews and reputation</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="From first contact to a booked discovery call.">Lead</div>
+          <div class="sub" data-note="Arrives by form, email, referral or DM. Anything not logged the same way every time quietly gets lost.">Capture the enquiry</div>
+          <div class="sub" data-note="Whoever replies first usually wins the call, before either side has said much of substance.">Reply fast</div>
+          <div class="sub" data-note="Decides whether this is worth a proposal at all. Skipping it wastes a proposal on a bad fit.">Qualify: budget, niche, deliverables</div>
+          <div class="sub" data-note="The actual goal of this stage. A lead with no call on the calendar goes cold by default.">Book the discovery call</div>
+          <div class="sub" data-note="A defined list of prospects, worked at volume instead of one at a time. Only works if someone, or something, can actually work the whole list — not just the top of it.">Bulk outreach to a target list</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="The retainer gets priced, signed, and the agency gets the access it needs to actually run the account.">Proposal &amp; onboarding</div>
+          <div class="sub" data-note="What the client is actually buying — channels, deliverables, cadence. Inconsistent pricing here shows up as a margin problem months later.">Price and package the retainer</div>
+          <div class="sub" data-note="The formal offer. A slow proposal loses to a faster competitor more often than a cheaper one.">Send the proposal</div>
+          <div class="sub" data-note="Sent and ignored is where an agency loses the most already-warm business. Nobody owns the follow-up, so it quietly dies.">Chase unanswered proposals</div>
+          <div class="sub" data-note="The point it becomes real work rather than a maybe.">Contract and deposit</div>
+          <div class="sub" data-note="Logins, brand assets, tone of voice, who approves what. Whatever gets collected badly here causes rework for the whole retainer.">Brand and access onboarding</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="The recurring core of the work. This loop repeats every month, for every client, for as long as the retainer runs.">Content pipeline</div>
+          <div class="sub" data-note="What gets posted, and why, decided ahead of the month instead of the morning of.">Content calendar and strategy</div>
+          <div class="sub" data-note="Copy, graphics, video. The actual craft, and the part that doesn't scale just by adding another tool.">Create the content</div>
+          <div class="sub" data-note="The client signs off before anything goes live. Slow approval turns a monthly cadence into a scramble.">Client approval round</div>
+          <div class="sub" data-note="Getting approved content onto the right platform at the right time, so nobody is manually posting at 9am.">Schedule and publish</div>
+          <div class="sub" data-note="Replying to comments and messages as the client's own voice. Easy to under-resource, because it never stops.">Community management</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Proving the retainer is working, on a schedule the client can actually rely on.">Reporting &amp; reviews</div>
+          <div class="sub" data-note="What actually moved — followers, engagement, leads. Without it, a retainer runs on trust alone.">Monthly performance report</div>
+          <div class="sub" data-note="Where the numbers turn into a plan for next month. Skip it and the report becomes an email nobody reads.">Strategy review call</div>
+          <div class="sub" data-note="If the retainer includes paid promotion, someone owns the budget and the daily numbers.">Ad spend management</div>
+          <div class="sub" data-note="Extra asks that land outside what was priced. Undocumented, they quietly erode the margin on the account.">Scope-creep and change requests</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Closing out the money for the month, on a retainer that repeats rather than ends.">Settle</div>
+          <div class="sub" data-note="Should be identical every month if the retainer hasn't changed. Rebuilding it by hand each time is pure waste.">Recurring invoice</div>
+          <div class="sub" data-note="A retainer that goes unpaid for a month is easy to miss until it's two months behind.">Chase late payment</div>
+          <div class="sub" data-note="Rare on a retainer, but an undocumented scope disagreement can turn into one fast.">Refunds and disputes</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Whether the client renews, grows, or leaves — and what the agency keeps either way.">Retain &amp; grow</div>
+          <div class="sub" data-note="Should happen before the contract lapses, not the week after.">Renewal conversation</div>
+          <div class="sub" data-note="The cheapest new revenue an agency has — an existing client who already trusts the work.">Upsell additional channels or services</div>
+          <div class="sub" data-note="The highest-return ask available, and the easiest one to forget to make.">Ask for review or referral</div>
+          <div class="sub" data-note="Credentials handed back, a case study captured if the client agrees. The relationship's last impression.">Offboarding</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head support-scope">
+        <span class="pip"></span><h2>Support-based</h2>
+        <span class="note">Happens whether or not any single client exists</span><span class="line"></span>
+      </div>
+      <div class="row support" style="--n:6">
+
+        <div class="col">
+          <div class="head" data-note="Recurring retainer revenue, but timing still matters more than it looks.">Finance</div>
+          <div class="sub" data-note="Recording and categorising what came in and went out.">Bookkeeping and expenses</div>
+          <div class="sub" data-note="Fixed deadlines and real penalties.">Taxes and filings</div>
+          <div class="sub" data-note="Ad spend or contractor costs fronted before the client pays can still create a real gap, even on recurring revenue.">Cash flow</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Usually a mix of staff and freelance, built around whoever runs which accounts.">Staffing</div>
+          <div class="sub" data-note="Account managers and creators, and finding people who can do both is rare.">Hiring</div>
+          <div class="sub" data-note="How a new hire learns to run an account the agency's way. Almost never written down.">Onboarding and training</div>
+          <div class="sub" data-note="Who's covering which client's content day and which calls. Breaks the moment someone is out.">Staff scheduling</div>
+          <div class="sub" data-note="Paying a mixed roster of staff and contractors correctly and on time.">Payroll</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="What the agency depends on to actually produce and ship the work.">Content &amp; platform tools</div>
+          <div class="sub" data-note="Where approved content actually gets queued and posted.">Scheduling and publishing platform</div>
+          <div class="sub" data-note="Where the content gets made. A single point of failure if only one person knows how to use it well.">Design tools</div>
+          <div class="sub" data-note="Photos, footage, fonts, music. Easy to use something unlicensed under deadline pressure.">Stock assets and licensing</div>
+          <div class="sub" data-note="Accumulates per client and per tool. Rarely audited once it's running.">Software and subscriptions</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="The agency's work runs on rules and platforms it doesn't control.">Compliance &amp; risk</div>
+          <div class="sub" data-note="Who owns the content after the retainer ends. Needs to be written down, not assumed.">Contracts and IP ownership</div>
+          <div class="sub" data-note="A platform policy change can break a client's account overnight, with nothing the agency did wrong.">Platform terms of service</div>
+          <div class="sub" data-note="Agencies see a client's real numbers and plans. One leak damages every other relationship, not just the one.">Client confidentiality</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="The agency's own proof of work, maintained independent of any single client.">Portfolio &amp; case studies</div>
+          <div class="sub" data-note="Kept current, or it quietly goes stale while the best recent work never gets added.">Maintained portfolio</div>
+          <div class="sub" data-note="Asked for while the relationship is warm, not months after it's ended.">Client testimonials</div>
+          <div class="sub" data-note="Needs explicit sign-off before a result becomes a public case study.">Permission to use client work</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Filling the roster at the right price without any one account eating all the time.">Growth &amp; strategy</div>
+          <div class="sub" data-note="What's actually offered and at what price. Easy to let this drift client by client until nobody can explain the price list.">Pricing and packages</div>
+          <div class="sub" data-note="Which accounts are actually profitable once real time is counted, not just what's billed.">Reading the numbers</div>
+          <div class="sub" data-note="How many retainers one creator or manager can run well before quality drops.">Capacity planning across accounts</div>
+          <div class="sub" data-note="Fixing the process instead of redoing the work. Permanently the first thing dropped when the week gets busy.">Improving how things run</div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ═════════════ SOCIALLY ENTWINED ═════════════ -->
+  <div class="panel" id="socially-entwined" data-owner="Krystal">
+
+    <div class="legend">
+      <span><i class="l-focus"></i>Focus now — what we build first</span>
+      <span><i class="l-live"></i>Live today</span>
+      <span><i class="l-out"></i>Deliberately out of scope</span>
+    </div>
+
+    <section>
+      <div class="sec-head client-scope">
+        <span class="pip"></span><h2>Client-based</h2>
+        <span class="note">One retainer per client, running continuously — nothing paused by circumstance here</span><span class="line"></span>
+      </div>
+      <div class="row client" style="--n:7">
+
+        <div class="col">
+          <div class="head"
+            data-note="Not discussed in detail on the kickoff call. What is known instead is where one big piece of new business actually came from: becoming an approved vendor for a network of medical offices."
+            data-questions="How do most new clients actually find you today — referral, search, social, word of mouth?|Do you track where a lead came from, or is that mostly a guess after the fact?">Awareness</div>
+          <div class="sub" data-note="Not confirmed whether a portfolio exists or gets used in selling." data-questions="Do you have a portfolio or case studies you send to prospects?">Portfolio and case studies</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do you actively run Socially Entwined's own accounts, the way you would for a client?">Own social presence</div>
+          <div class="sub" data-note="Becoming an approved vendor for Femwell, a network of medical offices, is the clearest recent new-business channel named on the call — though it wasn't described as a repeatable referral system."
+            data-questions="How did the Femwell relationship start?|Are there other networks or associations like it worth approaching the same way?">Referrals</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do you do any outbound prospecting beyond the Femwell list?">Outbound prospecting</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do clients leave reviews anywhere, and do you ever ask for one?">Reviews and reputation</div>
+        </div>
+
+        <div class="col">
+          <div class="head"
+            data-note="HoneyBook is the lead-intake tool, but Krystal named a real tracking gap: many clients skip the lead form entirely and reach her by direct email or referral instead."
+            data-questions="Roughly what share of new clients come in through the HoneyBook form versus email or referral directly?|Does anything track the ones that skip the form, or do they just start as a normal email thread?">Lead</div>
+          <div class="sub" data-note="HoneyBook's form is one path in. Direct email and referral are named as common alternate paths that bypass it entirely."
+            data-questions="Where do most enquiries actually land first — the form, your email, or somewhere else?">Capture the enquiry</div>
+          <div class="sub" data-note="Not confirmed how quickly enquiries get a first reply today." data-questions="How fast do you usually get back to a new enquiry?">Reply fast</div>
+          <div class="sub" data-note="Not confirmed." data-questions="What makes you say yes to a prospect, versus pass?">Qualify: budget, niche, deliverables</div>
+          <div class="sub" data-note="HoneyBook runs the discovery-call step, per the current stack." data-questions="Is the discovery call always booked through HoneyBook, or sometimes arranged another way?">Book the discovery call</div>
+          <div class="sub focus" data-state="focus"
+            data-note="Milestone 2. Roughly 400 Florida medical offices — Socially Entwined recently became an approved Femwell vendor — plus several hundred more in Georgia, sit in an Excel spreadsheet. A team member currently emails about 80 of them a day by hand."
+            data-questions="How many contacts actually have a named person versus just an info@ address?|For the info@-only offices, is phone or SMS the right first touch, or should we try email anyway?|Is in-person drop-off realistic for any of the Florida offices, or should everything start remote?|How should Georgia be handled differently from Florida, if at all?|What does a good message actually say — is there one already, or do we draft it together?|How many touches before we stop trying a given office?|Who reviews outreach before it goes out — you personally, or does it need no review once the template is agreed?|What counts as success here — a reply, a booked call, or something else?|Is roughly 80 a day the ceiling because of the person doing it, or because of something else?">Bulk outreach to a target list</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="HoneyBook carries the proposal, contract and invoice. Almost all of the pain Krystal named lives inside this stage."
+            data-questions="Walk through one real proposal end to end — where does each piece actually happen?">Proposal &amp; onboarding</div>
+          <div class="sub" data-note="Packages exist in some form — Krystal described wanting to 'pick a package and have the invoice populate automatically', which implies a defined set already."
+            data-questions="How many packages do you offer today, and are they written down anywhere outside your head?">Price and package the retainer</div>
+          <div class="sub" data-note="Assembled by hand in Canva today. Named as Krystal's single biggest time cost — roughly 80% of her time is manual admin, largely this."
+            data-questions="How long does one proposal actually take to put together?|Is the Canva template the same every time, or rebuilt per client?">Send the proposal</div>
+          <div class="sub focus" data-state="focus"
+            data-note="Krystal's own highest-priority problem, named directly on the call: proposals go out to warm prospects who then go quiet, with nothing that nudges them back. Milestone 3."
+            data-questions="After how many days of silence should a proposal count as stalled — 3, 7, 14?|Should the follow-up come from you personally, or from Socially Entwined as the business?|Do you want to approve the follow-up message every time, or approve a template once and let it send?|Is there a backlog of already-stalled proposals worth revisiting right now, or only new ones going forward?|Email, phone or text — which actually gets a warm prospect to respond?|How many follow-ups before you'd rather it stopped trying?|Should a follow-up ever offer something new — a discount, a call — or just re-surface the original proposal?">Chase unanswered proposals</div>
+          <div class="sub" data-note="HoneyBook. Live today." data-questions="Anything about contract or deposit collection that causes friction today?">Contract and deposit</div>
+          <div class="sub" data-note="A related but distinct access problem surfaced on the call: a client who rebranded and changed her email couldn't regain HoneyBook access, because the platform requires an exact email match. Flagged as a HoneyBook product limitation, not something MyCo is expected to fix."
+            data-questions="Has this happened with more than one client?|Is there a workaround you use today when it comes up?">Brand and access onboarding</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Rella runs the day-to-day social media management and scheduling. Not discussed in depth beyond being named as part of the disconnected toolset."
+            data-questions="Walk through a normal content month for one client — who does what, in which tool?">Content pipeline</div>
+          <div class="sub" data-note="Not confirmed how far ahead this is planned, or in what tool." data-questions="Where does the content plan for a given client actually live?">Content calendar and strategy</div>
+          <div class="sub" data-note="Not confirmed who creates content or in what tool." data-questions="Who makes the actual content — you, a team member, the client?">Create the content</div>
+          <div class="sub out" data-state="out"
+            data-note="Real-time content feedback with clients runs through per-client WhatsApp group chats. Krystal was explicit this channel stays personal — she does not want AI messaging clients through it, and it also carries milestone celebrations and off-hours idea drops she does not want to lose the personal touch on."
+            data-questions="Is there any part of the WhatsApp threads worth capturing elsewhere, even if the channel itself stays untouched?">Client approval round</div>
+          <div class="sub" data-note="Rella, per the current stack." data-questions="Anything about scheduling or publishing that's a recurring pain, separate from the tools not talking to each other?">Schedule and publish</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Who replies to comments and DMs on a client's account — you, a team member, the client themselves?">Community management</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Not discussed in depth. One related idea was raised as a secondary ask, not a priority."
+            data-questions="What does a normal reporting cycle with a client look like today?">Reporting &amp; reviews</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do clients get a regular report, and in what form?">Monthly performance report</div>
+          <div class="sub" data-note="Scheduling automation for monthly 1:1 calls was mentioned as 'would also be valuable' — a secondary idea, not one of the three agreed priorities."
+            data-questions="How are these calls scheduled today?|Worth revisiting after the three priority items, or not really a pain point on its own?">Strategy review call</div>
+          <div class="sub" data-note="Not confirmed whether Socially Entwined manages paid ad budgets for any client." data-questions="Does any client retainer include managing ad spend?">Ad spend management</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Does scope creep happen often, and how is it usually handled?">Scope-creep and change requests</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="HoneyBook carries invoicing. The other half of Krystal's ~80%-of-her-time pain lives here."
+            data-questions="Walk through how one invoice actually gets built and sent today.">Settle</div>
+          <div class="sub" data-note="Built manually today. Krystal wants to pick a package and have the invoice populate automatically — named directly as something she wants, not something already tried and failed."
+            data-questions="Is invoicing the same every month per client, or does it vary enough that automation would need to handle real differences?|Would 'populate from the package' cover most invoices, or are there always exceptions?">Recurring invoice</div>
+          <div class="sub" data-note="Not confirmed whether anything nudges a late payment automatically today." data-questions="Does HoneyBook chase late payments on its own, or does that fall to you?">Chase late payment</div>
+          <div class="sub" data-note="Not confirmed." data-questions="How often do refunds or scope disputes come up?">Refunds and disputes</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Not discussed directly, beyond the disconnected tools making the whole business harder to run at its current size."
+            data-questions="What does client turnover look like — do clients tend to stay a long time, or is it churnier than that?">Retain &amp; grow</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is there a set point where a retainer renews, or does it just continue until someone raises it?">Renewal conversation</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do clients often add services after starting, or does the retainer usually stay fixed?">Upsell additional channels or services</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do you ever ask a happy client for a referral or a review?">Ask for review or referral</div>
+          <div class="sub" data-note="Not confirmed how a client relationship actually ends, or what gets handed back." data-questions="What happens when a client leaves — access, files, anything owed either way?">Offboarding</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head support-scope">
+        <span class="pip"></span><h2>Support-based</h2>
+        <span class="note">The real friction here isn't any one tool — it's that none of them talk to each other</span><span class="line"></span>
+      </div>
+      <div class="row support" style="--n:6">
+
+        <div class="col">
+          <div class="head" data-note="Not discussed in detail on the call." data-questions="Who handles the books — you, an accountant, someone else?">Finance</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is bookkeeping handled in-house or outsourced?">Bookkeeping and expenses</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Who handles tax filings today?">Taxes and filings</div>
+          <div class="sub" data-note="Not confirmed, though the manual-invoicing delay named in pain #1 is a plausible drag on it." data-questions="Does slow invoicing ever turn into a real cash-flow problem, or is it mostly just annoying?">Cash flow</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="At least one team member is known: whoever currently emails the Femwell list by hand, roughly 80 a day."
+            data-questions="Who's on the team today, and what does each person actually own?">Staffing</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is hiring an active need right now?">Hiring</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is anything written down about how Socially Entwined does things?">Onboarding and training</div>
+          <div class="sub" data-note="Not confirmed." data-questions="How is work split across the team day to day?">Staff scheduling</div>
+          <div class="sub" data-note="Gusto, per the current stack." data-questions="Anything about payroll that's a real pain, or is Gusto working fine as is?">Payroll</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Five tools in the current stack — HoneyBook, Canva, Gusto, Rella and Google Workspace — with no integration between them. Krystal is the integration layer herself, manually moving information from one to the next. Pain #3 from the call."
+            data-questions="Which two tools cause the most manual copying between them?">Content &amp; platform tools</div>
+          <div class="sub" data-note="Rella." data-questions="Anything about Rella specifically that's a recurring frustration?">Scheduling and publishing platform</div>
+          <div class="sub" data-note="Canva — used specifically for assembling proposals by hand, per the call. Not confirmed whether it's also used for client social content itself."
+            data-questions="Is Canva also how social content gets designed, or is that separate from the proposal use?">Design tools</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Where do photos, footage or stock assets come from?">Stock assets and licensing</div>
+          <div class="sub" data-note="Google Workspace: per-staff email plus a shared admin email anchoring the team's Drive. Proposals go out from Krystal's own personal email only, not a business address. A HoneyBook × ChatGPT plugin was also tried and didn't do what she needed."
+            data-questions="Is sending proposals from your personal email a deliberate choice, or just how it ended up?|Anything specific the HoneyBook × ChatGPT plugin got wrong that's worth avoiding here?">Software and subscriptions</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Not discussed on the call." data-questions="Anything here that's ever caused a real problem — a contract dispute, a platform account getting suspended, a confidentiality issue?">Compliance &amp; risk</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is content ownership written into your contracts today?">Contracts and IP ownership</div>
+          <div class="sub" data-note="Not confirmed how exposed the business is to a platform or Rella policy change." data-questions="Has a platform change ever disrupted a client account?">Platform terms of service</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Any past confidentiality concerns worth knowing about?">Client confidentiality</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Not discussed on the call." data-questions="Is there anything like a portfolio today, even informal?">Portfolio &amp; case studies</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is a portfolio kept up to date anywhere?">Maintained portfolio</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do you collect testimonials from clients?">Client testimonials</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Do clients typically agree to be used as a case study?">Permission to use client work</div>
+        </div>
+
+        <div class="col">
+          <div class="head" data-note="Tool fragmentation (pain #3) is the clearest strategic gap named on the call. Neither Rella nor Gusto has any integration path into MyCo today — a real gap, not yet confirmed as something on either vendor's roadmap."
+            data-questions="If Rella or Gusto could talk to MyCo, which one would matter more first?">Growth &amp; strategy</div>
+          <div class="sub" data-note="Packages exist in some form (see Proposal &amp; onboarding). Not confirmed how they're structured or reviewed." data-questions="How often do you revisit pricing?">Pricing and packages</div>
+          <div class="sub" data-note="Not confirmed. No equivalent yet of a regular 'what do I check' habit was named on the call." data-questions="If you could only check three numbers regularly, what would they be?">Reading the numbers</div>
+          <div class="sub" data-note="Not confirmed." data-questions="Is any client account currently stretching the team thin?">Capacity planning across accounts</div>
+          <div class="sub" data-note="This whole engagement effectively starts here — the three agreed priorities (Femwell outreach, dead-lead revival, connecting Gmail and HoneyBook) are the first cut at fixing exactly this.">Improving how things run</div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
 </div>
 
 <div id="drawer">
@@ -689,7 +980,7 @@
   <div class="badge-slot"></div>
   <p class="note"></p>
   <div class="qwrap" hidden>
-    <div class="qlabel">Questions for Jose</div>
+    <div class="qlabel"></div>
     <ul class="qlist"></ul>
   </div>
 </div>
@@ -702,6 +993,7 @@
   var badges = drawer.querySelector('.badge-slot');
   var note   = drawer.querySelector('p.note');
   var qwrap  = drawer.querySelector('.qwrap');
+  var qlabel = drawer.querySelector('.qlabel');
   var qlist  = drawer.querySelector('ul.qlist');
   var current = null;
 
@@ -737,6 +1029,9 @@
     }
 
     note.textContent = el.dataset.note || '';
+
+    var owner = el.closest('.panel').dataset.owner;
+    qlabel.textContent = owner ? 'Questions for ' + owner : 'Questions for the owner';
 
     qlist.innerHTML = '';
     var qs = (el.dataset.questions || '').split('|').map(function (q) { return q.trim(); }).filter(Boolean);
