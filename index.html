@@ -62,6 +62,7 @@
   .legend .l-dorm  { background: #b7bdc7; }
   .legend .l-out   { background: #fff; border: 1px dashed #b7bdc7; }
   .legend .l-rev   { background: #0f9d76; }
+  .legend .l-research { background: #0284c7; }
 
   section { margin-bottom: 46px; }
   section:last-child { margin-bottom: 0; }
@@ -113,6 +114,7 @@
   .sub.focus    { background: #fffaf2; border-left-color: var(--focus) !important; color: #92400e; font-weight: 500; }
   .sub.out      { background: #fff; border: 1px dashed #cbd1d9; border-left: 3px dashed #cbd1d9 !important; color: #9aa2ae; box-shadow: none; }
   .sub.rev      { background: #f0fbf7; border-left-color: #0f9d76 !important; color: #0b5b47; font-weight: 500; }
+  .sub.research { background: #f0f8fd; border-left-color: #0284c7 !important; color: #0b4a6f; font-weight: 500; }
 
   /* drawer */
   #drawer {
@@ -130,6 +132,7 @@
   #drawer .badge.focus   { background: #fef3e2; color: var(--focus); }
   #drawer .badge.out     { background: #f2f4f7; color: #667085; }
   #drawer .badge.rev     { background: #e6f7f1; color: #0f9d76; }
+  #drawer .badge.research { background: #e5f3fb; color: #0284c7; }
   #drawer p.was          { font-size: 13.5px; line-height: 1.55; color: #667085; margin: 0; }
   #drawer p.note { font-size: 14px; line-height: 1.6; color: var(--body); margin: 0; }
   #drawer .qlabel { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 20px 0 10px; }
@@ -717,6 +720,10 @@
   <!-- ═════════════ MARKETING AGENCY ═════════════ -->
   <div class="panel" id="marketing-agency" data-level="segment" data-label="Marketing Agency">
 
+    <div class="legend">
+      <span><i class="l-research"></i>From MSP research. Everything else is the segment template.</span>
+    </div>
+
     <section>
       <div class="sec-head client-scope">
         <span class="pip"></span><h2>Client-based</h2>
@@ -730,15 +737,23 @@
           <div class="sub" data-note="A prospect checks the agency's own accounts first. A quiet feed undercuts the pitch before the call even happens.">Own social presence</div>
           <div class="sub" data-note="Other clients, or a network the agency became a vendor to. Often the highest-quality lead source, and rarely tracked as its own channel.">Referrals</div>
           <div class="sub" data-note="Cold outreach to a defined list of target businesses. Only works at volume, and volume is exactly where it usually breaks down.">Outbound prospecting</div>
+          <div class="sub research" data-state="research" data-note="Events put an agency in front of businesses that never searched for one. The lead arrives with no form, no desk and no follow-up owner, so capture is the weak point rather than the conversation.">In-person events</div>
           <div class="sub" data-note="Public proof the agency actually delivers. Easy to neglect once the client roster is already full.">Reviews and reputation</div>
         </div>
 
         <div class="col">
           <div class="head" data-note="From first contact to a booked discovery call.">Lead</div>
-          <div class="sub" data-note="Arrives by form, email, referral or DM. Anything not logged the same way every time quietly gets lost.">Capture the enquiry</div>
-          <div class="sub" data-note="Whoever replies first usually wins the call, before either side has said much of substance.">Reply fast</div>
+          <div class="sub research" data-state="research"
+            data-note="Arrives by form, email, referral or DM. Anything not logged the same way every time quietly gets lost. Events add a channel with no form at all, which is where capture is weakest."
+            data-was="Arrives by form, email, referral or DM. Anything not logged the same way every time quietly gets lost.">Capture the enquiry</div>
+          <div class="sub research" data-state="research"
+            data-note="Whoever replies first usually wins the call. The acknowledgement and the real reply are two different acts: agencies treat an immediate acknowledgement as the thing that stops an enquiry going elsewhere while a proper answer gets written."
+            data-was="Whoever replies first usually wins the call, before either side has said much of substance.">Reply fast</div>
+          <div class="sub research" data-state="research" data-note="Agencies space follow-ups on an unresponsive new lead about a week apart and stop after two or three attempts. The cadence is deliberate and so is the stopping point, so anything built here needs both a rhythm and an end.">Follow up weekly, then stop</div>
           <div class="sub" data-note="Decides whether this is worth a proposal at all. Skipping it wastes a proposal on a bad fit.">Qualify: budget, niche, deliverables</div>
+          <div class="sub research" data-state="research" data-note="Deciding who to chase needs every open lead in one place with its last contact showing. Without that single view the decision gets made from memory, and the leads that get chased are the ones that happen to come to mind. Personal details picked up along the way are part of what makes the next touch land, so they belong on the record too.">See every open lead, and when it was last touched</div>
           <div class="sub" data-note="The actual goal of this stage. A lead with no call on the calendar goes cold by default.">Book the discovery call</div>
+          <div class="sub research" data-state="research" data-note="Agencies gather what they can find on a prospect before the call and use it to demonstrate expertise in the room. It is preparation work with a deadline attached, and it happens on every call that gets booked.">Research the lead before the discovery call</div>
           <div class="sub" data-note="A defined list of prospects, worked at volume instead of one at a time. Only works if someone, or something, can actually work the whole list — not just the top of it.">Bulk outreach to a target list</div>
         </div>
 
@@ -746,7 +761,11 @@
           <div class="head" data-note="The retainer gets priced, signed, and the agency gets the access it needs to actually run the account.">Proposal &amp; onboarding</div>
           <div class="sub" data-note="What the client is actually buying — channels, deliverables, cadence. Inconsistent pricing here shows up as a margin problem months later.">Price and package the retainer</div>
           <div class="sub" data-note="The formal offer. A slow proposal loses to a faster competitor more often than a cheaper one.">Send the proposal</div>
-          <div class="sub" data-note="Sent and ignored is where an agency loses the most already-warm business. Nobody owns the follow-up, so it quietly dies.">Chase unanswered proposals</div>
+          <div class="sub research" data-state="research" data-note="A mockup of the actual deliverable makes a proposal concrete, but building one means gathering the prospect's images and auditing what they already publish. Agencies name that gathering as the time cost, not the design.">Audit assets to mock up deliverables</div>
+          <div class="sub research" data-state="research"
+            data-note="Sent and ignored is where an agency loses the most already-warm business. Nobody owns the follow-up, so it quietly dies. This is the warm window, measured in days and weeks. Once a pitch is months old it is a different job."
+            data-was="Sent and ignored is where an agency loses the most already-warm business. Nobody owns the follow-up, so it quietly dies.">Chase unanswered proposals</div>
+          <div class="sub research" data-state="research" data-note="A pitch that went nowhere gets picked up again three to six months later. This is a different job from chasing a warm proposal: the lead has gone cold, the original pitch is stale, and the reason for making contact has to be new.">Revive leads that did not convert</div>
           <div class="sub" data-note="The point it becomes real work rather than a maybe.">Contract and deposit</div>
           <div class="sub" data-note="Logins, brand assets, tone of voice, who approves what. Whatever gets collected badly here causes rework for the whole retainer.">Brand and access onboarding</div>
         </div>
@@ -778,6 +797,7 @@
         <div class="col">
           <div class="head" data-note="Whether the client renews, grows, or leaves — and what the agency keeps either way.">Retain &amp; grow</div>
           <div class="sub" data-note="Should happen before the contract lapses, not the week after.">Renewal conversation</div>
+          <div class="sub research" data-state="research" data-note="Agencies reach back out to past clients about once a month. The material for it is work already done: past deliverables, what the account looked like, and the numbers it produced. A re-engagement message with none of those attached is just a check in.">Re-engage past clients monthly</div>
           <div class="sub" data-note="The cheapest new revenue an agency has — an existing client who already trusts the work.">Upsell additional channels or services</div>
           <div class="sub" data-note="The highest-return ask available, and the easiest one to forget to make.">Ask for review or referral</div>
           <div class="sub" data-note="Credentials handed back, a case study captured if the client agrees. The relationship's last impression.">Offboarding</div>
@@ -825,7 +845,9 @@
 
         <div class="col">
           <div class="head" data-note="The agency's own proof of work, maintained independent of any single client.">Portfolio &amp; case studies</div>
-          <div class="sub" data-note="Kept current, or it quietly goes stale while the best recent work never gets added.">Maintained portfolio</div>
+          <div class="sub research" data-state="research"
+            data-note="Kept current, or it quietly goes stale while the best recent work never gets added. It is also the input to re-engaging a past client, so a portfolio nobody maintains costs more than a missed pitch."
+            data-was="Kept current, or it quietly goes stale while the best recent work never gets added.">Maintained portfolio</div>
           <div class="sub" data-note="Asked for while the relationship is warm, not months after it's ended.">Client testimonials</div>
           <div class="sub" data-note="Needs explicit sign-off before a result becomes a public case study.">Permission to use client work</div>
         </div>
@@ -849,6 +871,7 @@
       <span><i class="l-focus"></i>Focus now — what we build first</span>
       <span><i class="l-live"></i>Live today</span>
       <span><i class="l-out"></i>Deliberately out of scope</span>
+      <span><i class="l-research"></i>From MSP research, not yet confirmed with Krystal</span>
     </div>
 
     <section>
@@ -876,8 +899,12 @@
             data-questions="Roughly what share of new clients come in through the HoneyBook form versus email or referral directly?|Does anything track the ones that skip the form, or do they just start as a normal email thread?">Lead</div>
           <div class="sub" data-note="HoneyBook's form is one path in. Direct email and referral are named as common alternate paths that bypass it entirely."
             data-questions="Where do most enquiries actually land first — the form, your email, or somewhere else?">Capture the enquiry</div>
-          <div class="sub" data-note="Not confirmed how quickly enquiries get a first reply today." data-questions="How fast do you usually get back to a new enquiry?">Reply fast</div>
+          <div class="sub" data-note="Not confirmed how quickly enquiries get a first reply today. The segment pattern separates an immediate acknowledgement from the real reply."
+            data-questions="How fast do you usually get back to a new enquiry?|Is there anything that goes out immediately, before you have written a real answer?|Would you want one to, or would that feel automated?">Reply fast</div>
           <div class="sub" data-note="Not confirmed." data-questions="What makes you say yes to a prospect, versus pass?">Qualify: budget, niche, deliverables</div>
+          <div class="sub research" data-state="research"
+            data-note="Not confirmed whether anything today shows every open lead with its last contact. Given enquiries arrive through the HoneyBook form, direct email and referral, a complete view would have to pull from more than one. The segment pattern is that this view is what makes the chase decision possible at all."
+            data-questions="If someone asked you right now who has not been followed up, where would you look?|Does anything show you when a lead was last contacted?|How many open leads are you carrying at a time?|Do the email and referral leads ever end up on the same list as the form ones?|What would you want to see for each one, beyond the name and the last contact?">See every open lead, and when it was last touched</div>
           <div class="sub" data-note="HoneyBook runs the discovery-call step, per the current stack." data-questions="Is the discovery call always booked through HoneyBook, or sometimes arranged another way?">Book the discovery call</div>
           <div class="sub focus" data-state="focus"
             data-note="Milestone 2. Roughly 400 Florida medical offices — Socially Entwined recently became an approved Femwell vendor — plus several hundred more in Georgia, sit in an Excel spreadsheet. A team member currently emails about 80 of them a day by hand."
@@ -893,7 +920,10 @@
             data-questions="How long does one proposal actually take to put together?|Is the Canva template the same every time, or rebuilt per client?">Send the proposal</div>
           <div class="sub focus" data-state="focus"
             data-note="Krystal's own highest-priority problem, named directly on the call: proposals go out to warm prospects who then go quiet, with nothing that nudges them back. Milestone 3."
-            data-questions="After how many days of silence should a proposal count as stalled — 3, 7, 14?|Should the follow-up come from you personally, or from Socially Entwined as the business?|Do you want to approve the follow-up message every time, or approve a template once and let it send?|Is there a backlog of already-stalled proposals worth revisiting right now, or only new ones going forward?|Email, phone or text — which actually gets a warm prospect to respond?|How many follow-ups before you'd rather it stopped trying?|Should a follow-up ever offer something new — a discount, a call — or just re-surface the original proposal?">Chase unanswered proposals</div>
+            data-questions="Other agencies space follow-ups about a week apart and stop after two or three attempts. Does that match what you would want?|If not, how long is the gap and where does it stop?|Should the follow-up come from you personally, or from Socially Entwined as the business?|Do you want to approve the follow-up message every time, or approve a template once and let it send?|Is there a backlog of already-stalled proposals worth revisiting right now, or only new ones going forward?|Email, phone or text, which actually gets a warm prospect to respond?|Should a follow-up ever offer something new, a discount or a call, or just re-surface the original proposal?">Chase unanswered proposals</div>
+          <div class="sub focus" data-state="focus"
+            data-note="Dead-lead revival is one of the three agreed priorities from the kickoff call but had no box on this map until now. Not confirmed where the dead leads live or how far back they go. The segment pattern is a revival attempt three to six months after the original pitch."
+            data-questions="Where do the leads that never converted actually live today, and how far back do they go?|Roughly how many are there?|How long after a pitch goes quiet would you call it dead rather than stalled?|Is three to six months about right, or is your cycle different?|What would a revival message say that the original pitch did not?|Should it offer something new, or just reopen the conversation?|Who decides which dead leads are worth reviving, you or the system?|Is this the same list as the stalled proposals in Milestone 3, or a separate one?">Revive leads that did not convert</div>
           <div class="sub" data-note="HoneyBook. Live today." data-questions="Anything about contract or deposit collection that causes friction today?">Contract and deposit</div>
           <div class="sub" data-note="A related but distinct access problem surfaced on the call: a client who rebranded and changed her email couldn't regain HoneyBook access, because the platform requires an exact email match. Flagged as a HoneyBook product limitation, not something MyCo is expected to fix."
             data-questions="Has this happened with more than one client?|Is there a workaround you use today when it comes up?">Brand and access onboarding</div>
@@ -934,6 +964,9 @@
           <div class="head" data-note="Not discussed directly, beyond the disconnected tools making the whole business harder to run at its current size."
             data-questions="What does client turnover look like — do clients tend to stay a long time, or is it churnier than that?">Retain &amp; grow</div>
           <div class="sub" data-note="Not confirmed." data-questions="Is there a set point where a retainer renews, or does it just continue until someone raises it?">Renewal conversation</div>
+          <div class="sub research" data-state="research"
+            data-note="Not confirmed whether past clients get contacted once a retainer ends. The segment pattern is a monthly rhythm, using past deliverables and the numbers the account produced as the reason for making contact."
+            data-questions="Do you stay in touch with clients after a retainer ends?|Is there a list of past clients anywhere?|When you have reached back out, what did you send?|Do you still have the results from those accounts?|Would a monthly rhythm suit you, or is that too often?">Re-engage past clients</div>
           <div class="sub" data-note="Not confirmed." data-questions="Do clients often add services after starting, or does the retainer usually stay fixed?">Upsell additional channels or services</div>
           <div class="sub" data-note="Not confirmed." data-questions="Do you ever ask a happy client for a referral or a review?">Ask for review or referral</div>
           <div class="sub" data-note="Not confirmed how a client relationship actually ends, or what gets handed back." data-questions="What happens when a client leaves — access, files, anything owed either way?">Offboarding</div>
@@ -1051,7 +1084,8 @@
   var qlist  = drawer.querySelector('ul.qlist');
   var current = null;
 
-  var STATE_TEXT = { dormant: 'Dormant', focus: 'Focus now', out: 'Out of scope', rev: 'Changed in review' };
+  var STATE_TEXT = { dormant: 'Dormant', focus: 'Focus now', out: 'Out of scope', rev: 'Changed in review',
+                     research: 'From research' };
 
   function close() {
     drawer.classList.remove('open');
